@@ -200,6 +200,18 @@ input:focus {
     color: #ff6a95;
 }
 
+.darkmode-link {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.darkmode-link:hover {
+    color: #ff6a95;
+}
+
 .about h1 {
     margin-bottom: 20px;
 }

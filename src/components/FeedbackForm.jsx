@@ -4,7 +4,7 @@ import {useState} from "react";
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 
-function FeedbackForm({handleAdd}) {
+function FeedbackForm({handleAdd, reverse}) {
 
     const [text, setText] = useState('');
     const [rating, setRating] = useState(10);
@@ -38,7 +38,7 @@ function FeedbackForm({handleAdd}) {
     }
 
     return (
-        <Card>
+        <Card reverse={reverse}>
             <form onSubmit={handleSubmit}>
                 <h2>How would you rate your service with us?</h2>
                 <RatingSelect select={(rating) => setRating(rating)}/>

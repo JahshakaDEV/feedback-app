@@ -8,10 +8,12 @@ import {v4 as uuidv4} from 'uuid';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import AboutIconLink from "./components/AboutIconLink";
+import DarkModeLink from "./components/DarkModeLink";
 
 function App() {
 
     const [feedback, setFeedback] = useState(FeedbackData);
+    const [reverse, setReverse] = useState(false);
 
     const addFeedback = (newFeedback) => {
         newFeedback.id = uuidv4()
@@ -34,7 +36,7 @@ function App() {
                         <>
                             <FeedbackForm handleAdd={addFeedback}/>
                             <FeedbackStats feedback={feedback}/>
-                            <FeedbackList feedback={feedback}
+                            <FeedbackList feedback={feedback} reverse={reverse}
                                           handleDelete={deleteFeedback}/>
 
                         </>
@@ -42,6 +44,7 @@ function App() {
                     <Route path='/about' element={<AboutPage/>}/>
                 </Routes>
                 <AboutIconLink/>
+                <DarkModeLink setReverse={setReverse} reverse={reverse}/>
             </div>
         </Router>
     )

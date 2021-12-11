@@ -2,8 +2,10 @@ import React from 'react';
 import FeedbackItem from "./FeedbackItem";
 import PropTypes from "prop-types"
 import {motion, AnimatePresence} from "framer-motion";
+import {useState} from "react";
 
-function FeedbackList({feedback, handleDelete}) {
+function FeedbackList({feedback, handleDelete, reverse}) {
+
     if (!feedback || feedback.length === 0) {
         return <p>No Feedback yet!</p>
     }
@@ -22,6 +24,7 @@ function FeedbackList({feedback, handleDelete}) {
                             key={item.id}
                             item={item}
                             handleDelete={handleDelete}
+                            reverse={reverse}
                         />
                     </motion.div>
                 ))}

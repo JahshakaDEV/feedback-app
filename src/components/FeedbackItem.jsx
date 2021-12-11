@@ -3,11 +3,11 @@ import React from 'react';
 import Card from "./shared/Card";
 import PropTypes from "prop-types";
 
-function FeedbackItem({item, handleDelete}) {
+function FeedbackItem({item, handleDelete, reverse}) {
 
 
     return (
-        <Card>
+        <Card reverse={reverse}>
             <div className={"num-display"}>{item.rating}</div>
             <button className={"close"} onClick={() => handleDelete(item.id)}>
                 <FaTimes color={'purple'}/>
@@ -19,6 +19,11 @@ function FeedbackItem({item, handleDelete}) {
 
 FeedbackItem.propTypes = {
     item: PropTypes.object.isRequired,
+    reverse: PropTypes.bool
+}
+
+FeedbackItem.defaultProps = {
+    reverse: false
 }
 
 
