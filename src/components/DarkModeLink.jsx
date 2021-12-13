@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {FaMoon} from "react-icons/fa";
+import FeedbackContext from "../context/FeedbackContext";
 
-function DarkModeLink({setReverse, reverse}) {
+function DarkModeLink() {
+
+    const {reverse, setReverse} = useContext(FeedbackContext)
+
     return (
         <div onClick={() => {
             setReverse(!reverse);
